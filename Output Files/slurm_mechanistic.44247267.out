@@ -1,0 +1,175 @@
+Mechanistic Interpretability Started: Mon Jan  5 01:08:44 MST 2026
+============================================================
+MECHANISTIC INTERPRETABILITY ANALYSIS
+============================================================
+
+Unsafe Keywords: ['cat', 'mammal', 'bottle', 'novel', 'piano']
+Safe Keywords: ['pet', 'animal', 'dog', 'book', 'spaceship']
+Results: ./mechanistic_interpretability_results_20260105_010858
+
+============================================================
+Analyzing: SFT
+============================================================
+  Loading ./llama-keyword-safety-v2...
+  Analyzing layers: [0, 4, 8, 12, 15]
+
+  Layer 0:
+    Probing accuracy: 58.33%
+    Cosine similarity: 0.9912
+    L2 distance: 0.0271
+
+  Layer 4:
+    Probing accuracy: 48.33%
+    Cosine similarity: 0.9995
+    L2 distance: 0.3660
+
+  Layer 8:
+    Probing accuracy: 53.33%
+    Cosine similarity: 1.0000
+    L2 distance: 0.3784
+
+  Layer 12:
+    Probing accuracy: 53.33%
+    Cosine similarity: 0.9995
+    L2 distance: 0.4209
+
+  Layer 15:
+    Probing accuracy: 90.00%
+    Cosine similarity: 1.0010
+    L2 distance: 0.6270
+
+============================================================
+Analyzing: DPO
+============================================================
+  Loading ./llama-dpo-keyword-safety...
+  Analyzing layers: [0, 4, 8, 12, 15]
+
+  Layer 0:
+    Probing accuracy: 58.33%
+    Cosine similarity: 0.9917
+    L2 distance: 0.0272
+
+  Layer 4:
+    Probing accuracy: 48.33%
+    Cosine similarity: 1.0000
+    L2 distance: 0.3677
+
+  Layer 8:
+    Probing accuracy: 53.33%
+    Cosine similarity: 1.0000
+    L2 distance: 0.3760
+
+  Layer 12:
+    Probing accuracy: 53.33%
+    Cosine similarity: 1.0000
+    L2 distance: 0.4102
+
+  Layer 15:
+    Probing accuracy: 78.33%
+    Cosine similarity: 1.0000
+    L2 distance: 0.5767
+
+============================================================
+Analyzing: TPO
+============================================================
+  Loading ./llama-tpo-keyword-safety...
+  Analyzing layers: [0, 4, 8, 12, 15]
+
+  Layer 0:
+    Probing accuracy: 58.33%
+    Cosine similarity: 0.9917
+    L2 distance: 0.0272
+
+  Layer 4:
+    Probing accuracy: 48.33%
+    Cosine similarity: 0.9995
+    L2 distance: 0.3677
+
+  Layer 8:
+    Probing accuracy: 53.33%
+    Cosine similarity: 1.0000
+    L2 distance: 0.3958
+
+  Layer 12:
+    Probing accuracy: 58.33%
+    Cosine similarity: 1.0000
+    L2 distance: 0.4612
+
+  Layer 15:
+    Probing accuracy: 100.00%
+    Cosine similarity: 1.0010
+    L2 distance: 0.6821
+
+============================================================
+Analyzing: LAT
+============================================================
+  Loading ./llama-lat-keyword-safety...
+  Analyzing layers: [0, 4, 8, 12, 15]
+
+  Layer 0:
+    Probing accuracy: 58.33%
+    Cosine similarity: 0.9912
+    L2 distance: 0.0272
+
+  Layer 4:
+    Probing accuracy: 48.33%
+    Cosine similarity: 1.0000
+    L2 distance: 0.3748
+
+  Layer 8:
+    Probing accuracy: 53.33%
+    Cosine similarity: 1.0000
+    L2 distance: 0.3765
+
+  Layer 12:
+    Probing accuracy: 53.33%
+    Cosine similarity: 1.0000
+    L2 distance: 0.4080
+
+  Layer 15:
+    Probing accuracy: 71.67%
+    Cosine similarity: 0.9990
+    L2 distance: 0.5073
+
+============================================================
+PROBING CLASSIFIER RESULTS
+============================================================
+
+Probe Accuracy by Model and Layer:
+model       DPO       LAT       SFT       TPO
+layer                                        
+0      0.583333  0.583333  0.583333  0.583333
+4      0.483333  0.483333  0.483333  0.483333
+8      0.533333  0.533333  0.533333  0.533333
+12     0.533333  0.533333  0.533333  0.583333
+15     0.783333  0.716667  0.900000  1.000000
+
+============================================================
+ACTIVATION STATISTICS
+============================================================
+
+Cosine Similarity (Unsafe vs Safe) by Layer:
+model       DPO       LAT       SFT       TPO
+layer                                        
+0      0.991699  0.991211  0.991211  0.991699
+4      1.000000  1.000000  0.999512  0.999512
+8      1.000000  1.000000  1.000000  1.000000
+12     1.000000  1.000000  0.999512  1.000000
+15     1.000000  0.999023  1.000977  1.000977
+
+L2 Distance (Unsafe vs Safe) by Layer:
+model       DPO       LAT       SFT       TPO
+layer                                        
+0      0.027161  0.027161  0.027145  0.027161
+4      0.367676  0.374756  0.365967  0.367676
+8      0.375977  0.376465  0.378418  0.395752
+12     0.410156  0.407959  0.420898  0.461182
+15     0.576660  0.507324  0.626953  0.682129
+
+✓ Results saved to: ./mechanistic_interpretability_results_20260105_010858/
+
+Files created:
+  - probing_results.csv
+  - activation_stats.csv
+  - report.txt
+Mechanistic Interpretability Finished: Mon Jan  5 01:09:10 MST 2026

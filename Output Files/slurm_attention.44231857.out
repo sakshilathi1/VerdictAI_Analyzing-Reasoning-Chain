@@ -1,0 +1,118 @@
+Attention Visualization Started: Sun Jan  4 22:08:41 MST 2026
+============================================================
+ATTENTION VISUALIZATION ANALYSIS
+============================================================
+
+Unsafe Keywords: ['cat', 'mammal', 'bottle']
+Safe Keywords: ['pet', 'animal', 'dog']
+Results: ./attention_visualization_results_20260104_220858
+
+============================================================
+Analyzing Attention: SFT
+============================================================
+  Loading ./llama-keyword-safety-v2...
+
+  Keyword: [cat]
+
+  Keyword: [mammal]
+
+  Keyword: [bottle]
+
+  Keyword: [pet]
+
+  Keyword: [animal]
+
+  Keyword: [dog]
+
+============================================================
+Analyzing Attention: DPO
+============================================================
+  Loading ./llama-dpo-keyword-safety...
+
+  Keyword: [cat]
+
+  Keyword: [mammal]
+
+  Keyword: [bottle]
+
+  Keyword: [pet]
+
+  Keyword: [animal]
+
+  Keyword: [dog]
+
+============================================================
+Analyzing Attention: TPO
+============================================================
+  Loading ./llama-tpo-keyword-safety...
+
+  Keyword: [cat]
+
+  Keyword: [mammal]
+
+  Keyword: [bottle]
+
+  Keyword: [pet]
+
+  Keyword: [animal]
+
+  Keyword: [dog]
+
+============================================================
+Analyzing Attention: LAT
+============================================================
+  Loading ./llama-lat-keyword-safety...
+
+  Keyword: [cat]
+
+  Keyword: [mammal]
+
+  Keyword: [bottle]
+
+  Keyword: [pet]
+
+  Keyword: [animal]
+
+  Keyword: [dog]
+
+============================================================
+ATTENTION ANALYSIS SUMMARY
+============================================================
+
+Attention FROM Keywords (Higher = More Influence):
+Model        DPO       LAT      SFT       TPO
+Keyword                                      
+animal   0.02564  0.025640  0.02564  0.025639
+cat      0.02564  0.025640  0.02564  0.025640
+dog      0.02564  0.025639  0.02564  0.025639
+pet      0.02564  0.025640  0.02564  0.025639
+
+Attention TO Keywords (Higher = More Focus on Keyword):
+Model         DPO       LAT       SFT       TPO
+Keyword                                        
+animal   0.006621  0.004134  0.002541  0.004116
+cat      0.005475  0.003731  0.002062  0.003700
+dog      0.006269  0.004204  0.002459  0.004279
+pet      0.004250  0.003220  0.002243  0.003231
+
+============================================================
+LAYER-WISE ANALYSIS
+============================================================
+
+SFT: Peak attention at layer 1
+
+DPO: Peak attention at layer 5
+
+TPO: Peak attention at layer 7
+
+LAT: Peak attention at layer 7
+
+✓ Results saved to: ./attention_visualization_results_20260104_220858/
+
+Files created:
+  - keyword_attention_detailed.csv
+  - attention_comparison.csv
+  - layer_evolution.csv
+  - attention_summary.csv
+  - attention_report.txt
+Attention Visualization Finished: Sun Jan  4 22:09:18 MST 2026
