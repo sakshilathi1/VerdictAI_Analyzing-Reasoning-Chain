@@ -1,0 +1,128 @@
+Statistical Significance Testing Started: Sun Jan  4 21:13:49 MST 2026
+============================================================
+STATISTICAL SIGNIFICANCE TESTING
+============================================================
+Results: ./statistical_significance_results_20260104_211405
+
+============================================================
+Evaluating SFT with 5 seeds
+============================================================
+  Loading ./llama-keyword-safety-v2...
+  Running seed 42...
+    SEEN: 83.3%, UNSEEN: 27.8%
+  Running seed 43...
+    SEEN: 83.3%, UNSEEN: 27.8%
+  Running seed 44...
+    SEEN: 83.3%, UNSEEN: 27.8%
+  Running seed 45...
+    SEEN: 83.3%, UNSEEN: 27.8%
+  Running seed 46...
+    SEEN: 83.3%, UNSEEN: 27.8%
+
+============================================================
+Evaluating DPO with 5 seeds
+============================================================
+  Loading ./llama-dpo-keyword-safety...
+  Running seed 42...
+    SEEN: 44.4%, UNSEEN: 50.0%
+  Running seed 43...
+    SEEN: 44.4%, UNSEEN: 50.0%
+  Running seed 44...
+    SEEN: 44.4%, UNSEEN: 50.0%
+  Running seed 45...
+    SEEN: 44.4%, UNSEEN: 50.0%
+  Running seed 46...
+    SEEN: 44.4%, UNSEEN: 50.0%
+
+============================================================
+Evaluating TPO with 5 seeds
+============================================================
+  Loading ./llama-tpo-keyword-safety...
+  Running seed 42...
+    SEEN: 100.0%, UNSEEN: 27.8%
+  Running seed 43...
+    SEEN: 100.0%, UNSEEN: 27.8%
+  Running seed 44...
+    SEEN: 100.0%, UNSEEN: 27.8%
+  Running seed 45...
+    SEEN: 100.0%, UNSEEN: 27.8%
+  Running seed 46...
+    SEEN: 100.0%, UNSEEN: 27.8%
+
+============================================================
+Evaluating LAT with 5 seeds
+============================================================
+  Loading ./llama-lat-keyword-safety...
+  Running seed 42...
+    SEEN: 100.0%, UNSEEN: 22.2%
+  Running seed 43...
+    SEEN: 100.0%, UNSEEN: 22.2%
+  Running seed 44...
+    SEEN: 100.0%, UNSEEN: 22.2%
+  Running seed 45...
+    SEEN: 100.0%, UNSEEN: 22.2%
+  Running seed 46...
+    SEEN: 100.0%, UNSEEN: 22.2%
+
+============================================================
+SUMMARY STATISTICS
+============================================================
+
+SFT:
+  SEEN:   83.3% ± 0.0% (95% CI: [83.3, 83.3])
+  UNSEEN: 27.8% ± 0.0% (95% CI: [27.8, 27.8])
+  Gap:    55.6%
+
+DPO:
+  SEEN:   44.4% ± 0.0% (95% CI: [44.4, 44.4])
+  UNSEEN: 50.0% ± 0.0% (95% CI: [50.0, 50.0])
+  Gap:    -5.6%
+
+TPO:
+  SEEN:   100.0% ± 0.0% (95% CI: [100.0, 100.0])
+  UNSEEN: 27.8% ± 0.0% (95% CI: [27.8, 27.8])
+  Gap:    72.2%
+
+LAT:
+  SEEN:   100.0% ± 0.0% (95% CI: [100.0, 100.0])
+  UNSEEN: 22.2% ± 0.0% (95% CI: [22.2, 22.2])
+  Gap:    77.8%
+
+============================================================
+PAIRWISE STATISTICAL COMPARISONS
+============================================================
+
+--- SEEN_ACCURACY ---
+  SFT vs DPO: Δ=38.9, p=0.0000***, d=0.00 (negligible)
+  SFT vs TPO: Δ=-16.7, p=0.0000***, d=0.00 (negligible)
+  SFT vs LAT: Δ=-16.7, p=0.0000***, d=0.00 (negligible)
+  DPO vs TPO: Δ=-55.6, p=0.0000***, d=0.00 (negligible)
+  DPO vs LAT: Δ=-55.6, p=0.0000***, d=0.00 (negligible)
+  TPO vs LAT: Δ=0.0, p=nan, d=0.00 (negligible)
+
+--- UNSEEN_ACCURACY ---
+  SFT vs DPO: Δ=-22.2, p=0.0000***, d=0.00 (negligible)
+  SFT vs TPO: Δ=0.0, p=nan, d=0.00 (negligible)
+  SFT vs LAT: Δ=5.6, p=0.0000***, d=0.00 (negligible)
+  DPO vs TPO: Δ=22.2, p=0.0000***, d=0.00 (negligible)
+  DPO vs LAT: Δ=27.8, p=0.0000***, d=0.00 (negligible)
+  TPO vs LAT: Δ=5.6, p=0.0000***, d=0.00 (negligible)
+
+--- GENERALIZATION_GAP ---
+  SFT vs DPO: Δ=61.1, p=0.0000***, d=0.00 (negligible)
+  SFT vs TPO: Δ=-16.7, p=0.0000***, d=0.00 (negligible)
+  SFT vs LAT: Δ=-22.2, p=0.0000***, d=0.00 (negligible)
+  DPO vs TPO: Δ=-77.8, p=0.0000***, d=0.00 (negligible)
+  DPO vs LAT: Δ=-83.3, p=0.0000***, d=0.00 (negligible)
+  TPO vs LAT: Δ=-5.6, p=0.0000***, d=0.00 (negligible)
+
+✓ Results saved to: ./statistical_significance_results_20260104_211405/
+
+Files created:
+  - raw_results.csv
+  - summary_statistics.csv
+  - pairwise_seen_accuracy.csv
+  - pairwise_unseen_accuracy.csv
+  - pairwise_generalization_gap.csv
+  - significance_report.txt
+Statistical Significance Testing Finished: Sun Jan  4 21:23:35 MST 2026
