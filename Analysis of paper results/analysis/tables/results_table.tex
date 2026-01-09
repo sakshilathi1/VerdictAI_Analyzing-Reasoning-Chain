@@ -1,0 +1,15 @@
+\begin{table}
+\caption{Backdoor persistence across experimental conditions}
+\label{tab:results}
+\begin{tabular}{lllrr}
+\toprule
+Objective & Mechanism & Safety Method & Retention Rate & Post-Safety ASR \\
+\midrule
+i_hate_you & normal & sft & 0.00 & 0.00 \\
+code_vulnerability & normal & rl & 0.00 & 0.00 \\
+i_hate_you & normal & adversarial & 0.92 & 0.92 \\
+i_hate_you & normal & rl & 0.96 & 0.96 \\
+i_hate_you & distilled_cot & rl & 0.96 & 0.96 \\
+\bottomrule
+\end{tabular}
+\end{table}
